@@ -19,7 +19,7 @@ public class Main {
         FileLoggerConfiguration config1 = new FileLoggerConfiguration(
                 "program.log",
                 LoggingLevel.DEBUG,
-                500, // ліміт 500 байтів    
+                500, // ліміт 500 байтів
                 "[%s][%s] Message: [%s]"
         );
 

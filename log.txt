@@ -10,3 +10,5 @@
 2026-11-16 11:49:04 [DEBUG] : It's debug message.
 2026-11-16 11:52:06 [INFO] : It's info message.
 2026-11-16 11:52:06 [DEBUG] : It's debug message.
+2026-11-16 12:04:28 [INFO] : It's info message.
+2026-11-16 12:04:28 [DEBUG] : It's debug message.
