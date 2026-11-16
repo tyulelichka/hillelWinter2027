@@ -1,12 +1,14 @@
 package hm12;
 
+import hm12.task7.Logger;
+
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
-public class FileLogger {
+public class FileLogger implements Logger {
     private FileLoggerConfiguration config;
     private static final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
     private static final DateTimeFormatter fileTimestampFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd_HH-mm-ss");
@@ -27,10 +29,12 @@ public class FileLogger {
         return fileTimestampFormatter;
     }
 
-    public void info(String message){
+    @Override
+    public void info(String message) {
         log(LoggingLevel.INFO, message);
     }
 
+    @Override
     public void debug(String message) {
         if (config.getCurrentLevel() == LoggingLevel.DEBUG) {
             log(LoggingLevel.DEBUG, message);
@@ -58,6 +62,7 @@ public class FileLogger {
             e.printStackTrace();
         }
     }
+
     private void createNewLogFile() {
         String timestamp = LocalDateTime.now().format(fileTimestampFormatter);
 

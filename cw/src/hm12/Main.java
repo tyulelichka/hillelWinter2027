@@ -1,36 +1,22 @@
 package hm12;
 
+import hm12.task7.Logger;
+import hm12.task7.StdoutLogger;
+import hm12.task7.StdoutLoggerConfiguration;
+
 public class Main {
     public static void main(String[] args) {
+        FileLoggerConfiguration fileConfig = new FileLoggerConfiguration("app.log", LoggingLevel.DEBUG, 1024, "[%s][%s] Message: [%s]");
+        Logger logger = new FileLogger(fileConfig);
 
-        FileLoggerConfiguration config = new FileLoggerConfiguration(
-                "log.txt",
-                LoggingLevel.DEBUG,
-                1024,
-                "%s [%s] : %s"
-        );
+        StdoutLoggerConfiguration stdoutConfig = new StdoutLoggerConfiguration(LoggingLevel.DEBUG, "[%s][%s] Message: [%s]");
+        Logger logger1 = new StdoutLogger(stdoutConfig);
 
-        FileLogger logger = new FileLogger(config);
-
-        logger.info("It's info message.");
+        logger.info("Program starts.");
         logger.debug("It's debug message.");
 
-
-        FileLoggerConfiguration config1 = new FileLoggerConfiguration(
-                "program.log",
-                LoggingLevel.DEBUG,
-                500, // ліміт 500 байтів
-                "[%s][%s] Message: [%s]"
-        );
-
-        FileLogger logger1 = new FileLogger(config1);
-
-        try {
-            logger1.info("Program starts.");
-            logger1.debug("Variable X is initialized with the value 10.");
-            logger1.info("The program finished successfully.");
-        } catch (FileMaxSizeReachedException e) {
-            System.err.println("Error: " + e.getMessage());
-        }
+        logger1.info("Program starts.");
+        logger1.debug("It's debug message.");
     }
 }
+
