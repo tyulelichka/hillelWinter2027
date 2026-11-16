@@ -1,0 +1,12 @@
+2026-11-16 11:36:08 [INFO] : It's info message.
+2026-11-16 11:36:08 [DEBUG] : It's debug message.
+2026-11-16 11:45:09 [INFO] : It's info message.
+2026-11-16 11:45:09 [DEBUG] : It's debug message.
+2026-11-16 11:47:33 [INFO] : It's info message.
+2026-11-16 11:47:33 [DEBUG] : It's debug message.
+2026-11-16 11:48:53 [INFO] : It's info message.
+2026-11-16 11:48:53 [DEBUG] : It's debug message.
+2026-11-16 11:49:04 [INFO] : It's info message.
+2026-11-16 11:49:04 [DEBUG] : It's debug message.
+2026-11-16 11:52:06 [INFO] : It's info message.
+2026-11-16 11:52:06 [DEBUG] : It's debug message.
